@@ -7,7 +7,7 @@
     "prebuild": "rm -rf ./prod",
     "build": "tsc",
     "lint": "eslint src",
-    "start": "node prod/index.js",
+    "start": "node -r dotenv/config prod/index.js",
     "test": "echo \"No tests yet.\""
   },
   "repository": {
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/nhcarrigan/twitter-webhook#readme",
   "devDependencies": {
     "@types/node": "^14.14.32",
-    "@types/twitter": "^1.7.0",
+    "@types/node-fetch": "^2.5.8",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "eslint": "^7.21.0",
@@ -38,7 +38,9 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
+    "@types/twitter": "^1.7.0",
     "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1",
     "twitter": "^1.7.1"
   },
   "lint-staged": {
