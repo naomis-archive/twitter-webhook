@@ -8,8 +8,8 @@ export const startServer = async (): Promise<void> => {
 
   // mount your middleware and routes here
 
-  app.use("/", (req, res) => {
-    res.send("hi");
+  app.use((req, res) => {
+    res.status(200).send("hi");
   });
 
   const privateKey = await readFile(
@@ -35,10 +35,10 @@ export const startServer = async (): Promise<void> => {
   const httpsServer = https.createServer(credentials, app);
 
   httpServer.listen(3080, () => {
-    console.log("http server listening on port 80");
+    console.log("http server listening on port 3080");
   });
 
   httpsServer.listen(3443, () => {
-    console.log("https server listening on port 443");
+    console.log("https server listening on port 3443");
   });
 };
