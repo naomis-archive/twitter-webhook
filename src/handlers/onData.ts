@@ -1,14 +1,14 @@
 import { TweetInt } from "../interfaces/TweetInt";
 import { WebhookBodyInt } from "../interfaces/WebhookBodyInt";
 import { WebhookEmbedInt } from "../interfaces/WebhookEmbedInt";
-import { login } from "../modules/login";
-import { getWebhook } from "../modules/webhook";
 import fetch from "node-fetch";
+import Twitter from "twitter-lite";
 
-export const onData = async (tweet: TweetInt): Promise<void> => {
-  const Client = login();
-  const WebhookUrl = await getWebhook();
-
+export const onData = async (
+  tweet: TweetInt,
+  Client: Twitter,
+  WebhookUrl: string
+): Promise<void> => {
   const {
     in_reply_to_status_id_str: replyId,
     text,

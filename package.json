@@ -1,6 +1,6 @@
 {
   "name": "twitter-webhook",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A webhook to pipe twitter activity to discord",
   "main": "prod/index.js",
   "scripts": {
