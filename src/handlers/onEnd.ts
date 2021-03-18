@@ -1,11 +1,8 @@
 import { WebhookBodyInt } from "../interfaces/WebhookBodyInt";
 import { WebhookEmbedInt } from "../interfaces/WebhookEmbedInt";
-import { getWebhook } from "../modules/webhook";
 import fetch from "node-fetch";
 
-export const onEnd = async (): Promise<void> => {
-  const webhook = await getWebhook();
-
+export const onEnd = async (webhook: string): Promise<void> => {
   const originalEmbed: WebhookEmbedInt = {
     title: "Twitter Monitor is shutting down!",
     description: "Something is broken! <@!465650873650118659>, check the logs!",

@@ -3,9 +3,12 @@ import { onEnd } from "./handlers/onEnd";
 import { onStart } from "./handlers/onStart";
 import { login } from "./modules/login";
 import { startServer } from "./modules/startServer";
+import { getWebhook } from "./modules/webhook";
 
 (async () => {
   const Client = login();
+
+  const Webhook = await getWebhook();
 
   await startServer();
 
@@ -24,9 +27,9 @@ import { startServer } from "./modules/startServer";
     follow: "1261759785344499712",
   });
 
-  stream.on("start", onStart);
-  stream.on("data", onData);
+  stream.on("start", () => onStart(Webhook));
+  stream.on("data", (response) => onData(response, Client, Webhook));
   stream.on("ping", () => console.log("ping"));
   stream.on("error", (error) => console.error(error));
-  stream.on("end", onEnd);
+  stream.on("end", () => onEnd(Webhook));
 })();
