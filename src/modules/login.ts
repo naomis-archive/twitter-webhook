@@ -1,4 +1,4 @@
-import Twitter from "twitter";
+import Twitter from "twitter-lite";
 
 export const login = (): Twitter => {
   const consumerKey = process.env.CONSUMER_KEY;
