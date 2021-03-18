@@ -1,6 +1,6 @@
 {
   "name": "twitter-webhook",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A webhook to pipe twitter activity to discord",
   "main": "prod/index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/nhcarrigan/twitter-webhook#readme",
   "devDependencies": {
+    "@types/express": "^4.17.11",
     "@types/node": "^14.14.32",
     "@types/node-fetch": "^2.5.8",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
@@ -38,10 +39,10 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
-    "@types/twitter": "^1.7.0",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "node-fetch": "^2.6.1",
-    "twitter": "^1.7.1"
+    "twitter-lite": "^1.1.0"
   },
   "lint-staged": {
     "*.ts": [
