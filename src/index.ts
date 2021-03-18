@@ -2,9 +2,12 @@ import { onData } from "./handlers/onData";
 import { onEnd } from "./handlers/onEnd";
 import { onStart } from "./handlers/onStart";
 import { login } from "./modules/login";
+import { startServer } from "./modules/startServer";
 
 (async () => {
   const Client = login();
+
+  await startServer();
 
   try {
     const data = await Client.get("account/verify_credentials");
