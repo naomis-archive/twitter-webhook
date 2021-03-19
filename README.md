@@ -1,11 +1,10 @@
-# Project Name
+# Twitter Webhook
 
-Project Description
+A quick bit of code for a Twitter to Discord webhook.
 
 ## Live Version
 
-This page is not yet deployed.
-<!--This page is currently deployed. [View the live website.]()-->
+This project is archived and thus is not deployed.
 
 ## Feedback and Bugs
 
