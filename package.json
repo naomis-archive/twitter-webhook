@@ -49,5 +49,9 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "engines": {
+    "node": "^15.10.0",
+    "npm": "^7.6.0"
   }
 }
